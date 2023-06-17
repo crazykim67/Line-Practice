@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,11 +17,11 @@ public class LineController : MonoBehaviour
 
     private bool CanAppend(Vector3 pos)
     {
-        // LineRenderer ÀÇ positionCount°¡ 0ÀÌ¸é true¸¦ ¹ÝÈ¯
+        // LineRenderer ì˜ positionCountê°€ 0ì´ë©´ trueë¥¼ ë°˜í™˜
         if (_renderer.positionCount == 0)
             return true;
 
-        // ÇöÀç LineRendererÀÇ ¸¶Áö¸· ¹øÂ°ÀÇ Position °ª°ú pos(¸¶¿ì½º Position °ª) »çÀÌÀÇ °ªÀÌ DrawManager¿¡¼­ ¼³Á¤ÇÑ ÇÑ°è Á¡(0.25f)º¸´Ù Å¬ ¶§ true¸¦ ¹ÝÈ¯
+        // í˜„ìž¬ LineRendererì˜ ë§ˆì§€ë§‰ ë²ˆì§¸ì˜ Position ê°’ê³¼ pos(ë§ˆìš°ìŠ¤ Position ê°’) ì‚¬ì´ì˜ ê°’ì´ DrawManagerì—ì„œ ì„¤ì •í•œ í•œê³„ ì (0.25f)ë³´ë‹¤ í´ ë•Œ trueë¥¼ ë°˜í™˜
         return Vector3.Distance(_renderer.GetPosition(_renderer.positionCount - 1), pos) > DrawManager.LIMIT;
     }
 }
